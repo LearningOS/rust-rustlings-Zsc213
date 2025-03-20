@@ -10,19 +10,18 @@ fn main() {
         my_option.unwrap();
     }
 
-    let my_arr = &[
-        -1, -2, -3
-        -4, -5, -6
-    ];
+    let my_arr = &[-1, -2, -3 - 4, -5, -6];
     println!("My array! Here it is: {:?}", my_arr);
 
-    let my_empty_vec = vec![1, 2, 3, 4, 5].resize(0, 5);
+    let mut my_empty_vec = vec![1, 2, 3, 4, 5];
+    my_empty_vec.resize(1, 5);
     println!("This Vec is empty, see? {:?}", my_empty_vec);
 
-    let mut value_a = 45;
-    let mut value_b = 66;
+    let mut value_a: i32 = 45;
+    let mut value_b: i32 = 66;
     // Let's swap these two!
-    value_a = value_b;
-    value_b = value_a;
+    let temp = value_a.clone();
+    value_a = value_b.clone();
+    value_b = value_a.clone();
     println!("value a: {}; value b: {}", value_a, value_b);
 }
